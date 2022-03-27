@@ -486,7 +486,7 @@ function getSettings (data)
    {
 
       const landDetectVariable = data.cmd.params.split(" ")[1].toLowerCase();
-      let value = false;
+      let value = true;
       if (landDetectVariable === "on" || landDetectVariable === "off")
       {
 
