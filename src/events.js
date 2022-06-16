@@ -41,7 +41,7 @@ exports.listen = function listen (client)
          // -----------------
 
          config = {
-            "botServer": "https://discord.gg/mgNR64R",
+            "botServer": "https://discord.gg/STaq3UDbqQ",
             "defaultLanguage": "en",
             "inviteURL": auth.invite || "Set this in your .env file / config variables in Heroku",
             "maxChainLen": 5,
