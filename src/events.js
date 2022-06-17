@@ -21,7 +21,7 @@ const joinMessage = require("./commands/info_commands/join");
 // ----------
 const activities_list = [
    "ritabot.gg | !tr help", 
-   "translations | ritabot.gg"
+   "translations | ritabot.gg",
    "ritabot.gg | !tr help",
    "for messages to translate | ritabot.gg",
    "messages to translate | ritabot.gg",
