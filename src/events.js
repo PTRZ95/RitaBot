@@ -15,7 +15,15 @@ const react = require("./commands/translation_commands/translate.react");
 const botVersion = require("../package.json").version;
 const botCreator = "Rita Bot Project";
 const joinMessage = require("./commands/info_commands/join");
-
+         
+const activities_list = [
+"ritabot.gg | tr help",
+"for messages to translate | ritabot.gg",
+"messages to translate | ritabot.gg",
+"tr help commands | ritabot.gg",
+"translations | ritabot.gg",
+"!tr help modules | ritabot.gg"
+];
 // ----------
 // Core Code
 // ----------
@@ -54,15 +62,6 @@ exports.listen = function listen (client)
             "translateCmdShort": "!tr",
             "version": botVersion
          };
-         
-         const activities_list = [
-            "ritabot.gg | tr help",
-            "for messages to translate | ritabot.gg",
-            "messages to translate | ritabot.gg",
-            "tr help commands | ritabot.gg",
-            "translations | ritabot.gg",
-            "!tr help modules | ritabot.gg"
-         ]; // creates an arraylist containing phrases you want your bot to switch through.
 
          if (!process.env.DISCORD_BOT_OWNER_ID)
          {
