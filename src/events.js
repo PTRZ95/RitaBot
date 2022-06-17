@@ -19,7 +19,10 @@ const joinMessage = require("./commands/info_commands/join");
 // ----------
 // Core Code
 // ----------
-const activities_list = ["ritabot.gg | !tr help", "translations | ritabot.gg"];
+const activities_list = [
+   "ritabot.gg | !tr help", 
+   "translations | ritabot.gg"
+];
 
 exports.listen = function listen (client)
 {
