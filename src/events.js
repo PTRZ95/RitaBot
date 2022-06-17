@@ -62,7 +62,7 @@ exports.listen = function listen (client)
          }
 
          const singleShard = client.options.shardCount;
-         setStatus(client.user, "online", config);
+         
          console.log(stripIndent`
          ----------------------------------------
          ${client.user.username} Bot is now online
@@ -73,7 +73,7 @@ exports.listen = function listen (client)
          console.log(oneLine`
          Shard: #${singleShard} Shards online -
          ${client.guilds.cache.size.toLocaleString()} guilds.`);
-
+         setStatus(client.user, "online", config);
          // client.user.setPresence({
          //   "activity": {
          //      "name": "!tr help",
