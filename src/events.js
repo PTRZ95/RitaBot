@@ -19,10 +19,7 @@ const joinMessage = require("./commands/info_commands/join");
 // ----------
 // Core Code
 // ----------
-const activities_list = [
-        "ritabot.gg | !tr help", 
-        "translations | ritabot.gg"
-        ]; // creates an arraylist containing phrases you want your bot to switch through.
+const activities_list = ["ritabot.gg | !tr help", "translations | ritabot.gg"]; // creates an arraylist containing phrases you want your bot to switch through.
 
 exports.listen = function listen (client)
 {
