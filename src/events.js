@@ -10,12 +10,12 @@ const auth = require("./core/auth");
 const logger = require("./core/logger");
 const messageHandler = require("./message");
 const db = require("./core/db");
-// const setStatus = require("./core/status");
+// Const setStatus = require("./core/status");
 const react = require("./commands/translation_commands/translate.react");
 const botVersion = require("../package.json").version;
 const botCreator = "Rita Bot Project";
 const joinMessage = require("./commands/info_commands/join");
-const activities_list = ["ritabot.gg | tr help","for messages to translate | ritabot.gg","messages to translate | ritabot.gg","tr help commands | ritabot.gg","translations | ritabot.gg","!tr help modules | ritabot.gg"];
+
 // ----------
 // Core Code
 // ----------
@@ -29,7 +29,6 @@ exports.listen = function listen (client)
    // Client Connected
    // -----------------
 
-   
    client.on(
       "ready",
       async () =>
@@ -42,7 +41,7 @@ exports.listen = function listen (client)
          // -----------------
 
          config = {
-            "botServer": "https://discord.gg/STaq3UDbqQ",
+            "botServer": "https://discord.gg/mgNR64R",
             "defaultLanguage": "en",
             "inviteURL": auth.invite || "Set this in your .env file / config variables in Heroku",
             "maxChainLen": 5,
@@ -63,7 +62,7 @@ exports.listen = function listen (client)
          }
 
          const singleShard = client.options.shardCount;
-         
+
          console.log(stripIndent`
          ----------------------------------------
          ${client.user.username} Bot is now online
@@ -75,15 +74,13 @@ exports.listen = function listen (client)
          Shard: #${singleShard} Shards online -
          ${client.guilds.cache.size.toLocaleString()} guilds.`);
 
-         
-         //setStatus(client.user, "online", config);
-         // client.user.setPresence({
-         //   "activity": {
-         //      "name": "!tr help",
-         //      "type": "LISTENING"
-         //   },
-         //   "status": "online"
-         // });
+         client.user.setPresence({
+            "activity": {
+               "name": "!tr help",
+               "type": "LISTENING"
+            },
+            "status": "online"
+         });
 
          // ---------------------
          // Log connection event
