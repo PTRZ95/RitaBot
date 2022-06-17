@@ -34,7 +34,11 @@ exports.listen = function listen (client)
       "ready",
       async () =>
       {
-
+         setInterval(() => {
+            const index = Math.floor(Math.random() * (activities_list.length - 1) + 1);
+            client.user.setActivity(activities_list[index], {type: 'WATCHING'});
+         }, 10000);
+         
          await db.initializeDatabase(client);
 
          // -----------------
