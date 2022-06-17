@@ -80,7 +80,7 @@ module.exports = function run (bot, status, config, writable = true)
                });
 
             },
-            auth.time.short
+            5000
          );
 
       }
