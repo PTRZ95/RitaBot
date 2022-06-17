@@ -34,7 +34,10 @@ exports.listen = function listen (client)
       "ready",
       async () =>
       {
-
+         setInterval(() => {
+            const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); 
+            client.user.setActivity(activities_list[index], {type: 'LISTENING'}); 
+         }, 10000);
          await db.initializeDatabase(client);
 
          // -----------------
@@ -74,10 +77,7 @@ exports.listen = function listen (client)
          console.log(oneLine`
          Shard: #${singleShard} Shards online -
          ${client.guilds.cache.size.toLocaleString()} guilds.`);
-         setInterval(() => {
-            const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
-            client.user.setActivity(activities_list[index], {type: 'LISTENING'}); // sets bot's activities to one of the phrases in the arraylist.
-        }, 10000); // Runs this every 10 seconds.
+
          
          //setStatus(client.user, "online", config);
          // client.user.setPresence({
