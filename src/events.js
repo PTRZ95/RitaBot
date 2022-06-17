@@ -62,7 +62,7 @@ exports.listen = function listen (client)
          }
 
          const singleShard = client.options.shardCount;
-
+         setStatus(client.user, "online", config);
          console.log(stripIndent`
          ----------------------------------------
          ${client.user.username} Bot is now online
@@ -81,7 +81,6 @@ exports.listen = function listen (client)
          //   },
          //   "status": "online"
          //});
-         setStatus(client.user, "online", config);
 
          // ---------------------
          // Log connection event
