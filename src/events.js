@@ -10,7 +10,7 @@ const auth = require("./core/auth");
 const logger = require("./core/logger");
 const messageHandler = require("./message");
 const db = require("./core/db");
-const setStatus = require("./core/status");
+// const setStatus = require("./core/status");
 const react = require("./commands/translation_commands/translate.react");
 const botVersion = require("../package.json").version;
 const botCreator = "Rita Bot Project";
@@ -28,7 +28,15 @@ exports.listen = function listen (client)
    // -----------------
    // Client Connected
    // -----------------
-
+   const activities_list = [
+      "ritabot.gg | tr help",
+      "for messages to translate | ritabot.gg",
+      "messages to translate | ritabot.gg",
+      "tr help commands | ritabot.gg",
+      "translations | ritabot.gg",
+      "!tr help modules | ritabot.gg"
+        ]; // creates an arraylist containing phrases you want your bot to switch through.
+   
    client.on(
       "ready",
       async () =>
@@ -73,7 +81,12 @@ exports.listen = function listen (client)
          console.log(oneLine`
          Shard: #${singleShard} Shards online -
          ${client.guilds.cache.size.toLocaleString()} guilds.`);
-         setStatus(client.user, "online", config);
+         setInterval(() => {
+            const index = Math.floor(Math.random() * (activities_list.length - 1) + 1); // generates a random number between 1 and the length of the activities array list (in this case 5).
+            client.user.setActivity(activities_list[index], {type: 'LISTENING'}); // sets bot's activities to one of the phrases in the arraylist.
+        }, 10000); // Runs this every 10 seconds.
+         
+         //setStatus(client.user, "online", config);
          // client.user.setPresence({
          //   "activity": {
          //      "name": "!tr help",
