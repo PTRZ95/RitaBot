@@ -22,6 +22,13 @@ const joinMessage = require("./commands/info_commands/join");
 const activities_list = [
    "ritabot.gg | !tr help", 
    "translations | ritabot.gg"
+   `ritabot.gg | !tr help`,
+   `for messages to translate | ritabot.gg`,
+   "messages to translate | ritabot.gg",
+   `!tr help commands | ritabot.gg`,
+   "translations | ritabot.gg",
+   `v.${config.version} | ritabot.gg`,
+   `!tr help modules | ritabot.gg`
 ];
 
 exports.listen = function listen (client)
