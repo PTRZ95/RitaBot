@@ -15,7 +15,6 @@ const react = require("./commands/translation_commands/translate.react");
 const botVersion = require("../package.json").version;
 const botCreator = "Rita Bot Project";
 const joinMessage = require("./commands/info_commands/join");
-         
 const activities_list = [
          "ritabot.gg | tr help",
          "for messages to translate | ritabot.gg",
